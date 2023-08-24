@@ -18,7 +18,7 @@ jobs:
       - name: Build your project
         run: |
           # Add your build commands here
-          # For examplee, npm install and npm build
+          # For examddplee, npm install and npm build
 
       - name: Deploy to FTP
         uses: noreengithub/cicdtest@v1.0.0
