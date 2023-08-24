@@ -21,7 +21,7 @@ jobs:
           # For example, npm install and npm build
 
       - name: Deploy to FTP
-        uses: noreengithub/cicdtest@3.1.1
+        uses: noreengithub/cicdtest@latest
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
