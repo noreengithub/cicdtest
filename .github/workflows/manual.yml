@@ -1,0 +1,30 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+ 
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build your project
+        run: |
+          # Add your build commands here
+          # For example, npm install and npm build
+
+      - name: Deploy to FTP
+        uses: noreengithub/cicdtest@latest
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html
+          local-dir: ./path/to/local/build/artifacts
